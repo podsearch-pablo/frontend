@@ -9,8 +9,11 @@ import Search from "../Search/Search";
 
 import SearchExample from '../SearchExample/SearchExample';
 import NavBar2 from "../NavBar/NavBar2";
+import DynamicSearch from "../SearchExample/DynamicSearch";
 
 const RouterNav = () => {
+
+
     return (
         <>
 
@@ -35,6 +38,12 @@ const RouterNav = () => {
                         <div className="h-screen bg-[#250C45]">
                             <NavBar2 />
                             <SearchExample />
+                        </div>
+                    } />
+                    <Route path="/dynamic" element={
+                        <div className="min-h-screen bg-[#250C45]">
+                            <NavBar2 />
+                            <DynamicSearch />
                         </div>
                     } />
                 </Routes>
