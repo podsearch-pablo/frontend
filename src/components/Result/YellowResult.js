@@ -1,10 +1,11 @@
-import Font from "react-font";
-import { Text } from "react-font";
+import Font, { Text } from "react-font";
 
 import React from "react";
-//widths of screen split up into 395, 633, 227-> this lives in the middle of 633.
 
-const Scrunch = (props) => {
+/**
+ * Single result in the form of a chat bubble
+ */
+const YellowResult = (props) => {
 
     const message = props.m;
 
@@ -46,21 +47,15 @@ const Scrunch = (props) => {
                     <Font family='Viga'>
                         <Text className="text-left" >
                             <p dangerouslySetInnerHTML={{ __html: makeBold(message) }}>
-
                             </p>
-
                         </Text>
-
-
-
-
                         <div className="flex-row flex absolute bottom-0 right-2">
 
                             <div>
                                 {secondsToHms(props.time)}
                             </div>
                             <a href={props.link}>
-                                <img src={require('./external.png')} className="h-5 w-5" />
+                                <img src={require('./png/external.png')} className="h-5 w-5" />
                             </a>
 
                         </div>
@@ -73,4 +68,4 @@ const Scrunch = (props) => {
         </>
     )
 }
-export default Scrunch;
+export default YellowResult;

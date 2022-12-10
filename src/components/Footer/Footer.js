@@ -1,4 +1,6 @@
-
+/**
+ * Footer component- information about creator, etc.
+ */
 const Footer = () => {
     return (
         <div class="bg-black">

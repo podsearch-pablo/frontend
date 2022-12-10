@@ -1,4 +1,7 @@
 
+/**
+ * Loading animation
+ */
 const Loading = () => {
 
     return (

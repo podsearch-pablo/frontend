@@ -1,6 +1,9 @@
 
 
-const NavBar2 = () => {
+/**
+ * Navigation bar - Uppermost element on website (CnS logo)
+ */
+const NavBar = () => {
     return (
         <>
 
@@ -19,4 +22,4 @@ const NavBar2 = () => {
     )
 }
 
-export default NavBar2;
+export default NavBar;

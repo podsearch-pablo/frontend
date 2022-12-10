@@ -1,11 +1,13 @@
 
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
-import Footer from "../Footer/Footer";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import NavBar2 from "../NavBar/NavBar2";
+import Footer from "../Footer/Footer";
+import NavBar from "../NavBar/NavBar";
 import DynamicSearch from "../SearchExample/DynamicSearch";
 
+/**
+ * Router for the application - dynamically renders the correct screen
+ */
 const RouterNav = () => {
 
 
@@ -14,10 +16,9 @@ const RouterNav = () => {
 
             <BrowserRouter>
                 <Routes>
-
                     <Route path="/" element={
                         <div className="min-h-screen bg-[#250C45]">
-                            <NavBar2 />
+                            <NavBar />
                             <DynamicSearch />
                         </div>
                     } />

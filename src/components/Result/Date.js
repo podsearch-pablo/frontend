@@ -1,4 +1,7 @@
 
+/**
+ * Box with pre-configured date inside
+ */
 const Date = (props) => {
     const date = props.date;
 
