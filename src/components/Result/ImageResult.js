@@ -4,8 +4,7 @@
  */
 const ImageResult = (prop) => {
     return (
-        
-        <img className="w-5/6" src={require('./jpg/' + prop.id + '.jpg')}/>
+        <img alt="Youtube video thumbnail" className="w-5/6" src={require('./jpg/' + prop.id + '.jpg')}/>
 
     );
 }

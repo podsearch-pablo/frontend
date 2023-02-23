@@ -5,8 +5,8 @@ const Footer = () => {
     return (
         <div class="bg-black">
             <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
-                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-100">
-                    <img className='h-[50px] w-[50px]' src={require('../NavBar/Plogo2.png')} />
+                <a href="https://youtube.com/colinandsamir" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-100">
+                    <img alt='Pablo Logo' className='h-[50px] w-[50px]' src={require('../NavBar/Plogo2.png')} />
                     <span class="h ml-3 text-xl">ScoutPod</span>
                 </a>
                 <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2022 Pablo Hansen —

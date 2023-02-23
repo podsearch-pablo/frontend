@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef} from "react"
 
 
 import YellowResult from "./YellowResult";
@@ -11,35 +11,38 @@ import YellowResult from "./YellowResult";
 const ResultList = (props) => {
 
 
-    const [dict, setDict] = useState(props.dictionary);
+    const dict = props.dictionary
     const [item, setItem] = useState();
-    let lst = [];
+    let lst = useRef([]);
 
-    const setDisplay = () => {
-        lst = [];
-        console.log("effect called");
-
-        for (let x = 0; x < dict.length; x++) {
-            lst.push(
-                <div className="pl-15 pb-8">
-                    <YellowResult keyword={props.search} m={dict[x]['text']} key={dict[x]['exactTime']} link={dict[x]['link']} time={dict[x]['exactTime']} />
-                </div>);
-        }
-        setItem(lst);
-    }
+    
 
     useEffect(() => {
-        lst = [];
+        const setDisplay = () => {
+            lst.current = [];
+            console.log("effect called");
+    
+            for (let x = 0; x < dict.length; x++) {
+                lst.current.push(
+                    <div className="pl-15 pb-8">
+                        <YellowResult keyword={props.search} m={dict[x]['text']} key={dict[x]['exactTime']} link={dict[x]['link']} time={dict[x]['exactTime']} />
+                    </div>);
+            }
+            setItem(lst.current);
+        }
+        
+
+        lst.current= [];
 
         if (dict.length > 3) {
             for (let x = 0; x < 3; x++) {
-                lst.push(
+                lst.current.push(
                     <div className="pl-15 pb-8">
                         <YellowResult keyword={props.search} m={dict[x]['text']} key={dict[x]['exactTime']} link={dict[x]['link']} time={dict[x]['exactTime']} />
                     </div>);
             } 
-            lst.push(
-                <img onClick={setDisplay}  className="pl-20 justify-center h-1/6 w-2/3"
+            lst.current.push(
+                <img alt="See more arrow" onClick={setDisplay}  className="pl-20 justify-center h-1/6 w-2/3"
                  src={require('./png/triangle.png')}>
                 </img>
             )
@@ -48,9 +51,9 @@ const ResultList = (props) => {
             setDisplay();
             return;
         }
-        setItem(lst);
+        setItem(lst.current);
 
-    }, [dict, props.dictionary]
+    }, [dict, props.dictionary, props.search]
     );
 
     return (

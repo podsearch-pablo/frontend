@@ -54,8 +54,8 @@ const YellowResult = (props) => {
                             <div>
                                 {secondsToHms(props.time)}
                             </div>
-                            <a href={props.link}>
-                                <img src={require('./png/external.png')} className="h-5 w-5" />
+                            <a href={props.link} target="_blank">
+                                <img  alt="Pablo logo" src={require('./png/external.png')} className="h-5 w-5" />
                             </a>
 
                         </div>
